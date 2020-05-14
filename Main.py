@@ -1,6 +1,7 @@
 import pygame
 import random
 from Bubble import Bubble
+from arrow import Arrow
 
  
 pygame.init()
@@ -39,9 +40,10 @@ pygame.display.set_caption('Bubble Shooter')
 
 game = True
 
-aa=pygame.sprite.Group()
+objetos=pygame.sprite.Group()
 player=Bubble(STARTX,STARTY)
-aa.add(player)
+objetos.add(player)
+
 while game:
     for event in pygame.event.get():
         if event.type == pygame.QUIT or event.type ==pygame.KEYUP:
@@ -50,7 +52,7 @@ while game:
 
 
     window.fill(BEIGE)
-    aa.draw(window)
+    objetos.draw(window)
     pygame.display.update()
  
  
