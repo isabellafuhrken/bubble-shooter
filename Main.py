@@ -38,10 +38,13 @@ BGCOLOR = BEIGE
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Bubble Shooter')
 
+
 game = True
 
 objetos=pygame.sprite.Group()
 player=Bubble(STARTX,STARTY)
+flecha=Arrow()
+objetos.add(flecha)
 objetos.add(player)
 
 while game:

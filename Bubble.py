@@ -6,9 +6,9 @@ class Bubble(pygame.sprite.Sprite):
         self.radius=BUBBLERADIUS
         self.speed=0
         self.angle=0
-        img=pygame.Surface((20,20))
+        img=pygame.Surface((40,40))
         img.set_colorkey((0,0,0))
-        pygame.draw.circle(img,YELLOW,(10,10),10)
+        pygame.draw.circle(img,YELLOW,(20,20),20)
         self.image=img
         self.rect=self.image.get_rect()
         self.rect.centerx=x
