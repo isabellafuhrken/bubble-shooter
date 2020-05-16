@@ -7,8 +7,8 @@ from arrow import Arrow
 pygame.init()
 
 FPS=120
-WIDTH=600
-HEIGHT=480
+WIDTH=800
+HEIGHT=600
 TEXTHEIGHT=20
 BUBBLERADIUS=20
 BUBBLEWIDTH=BUBBLERADIUS*2
@@ -31,6 +31,7 @@ NAVY    = (13, 200, 255)
 WHITE   = (255, 255, 255)
 BLACK   = (0, 0, 0)
 BEIGE = (229, 255, 204)
+LIGHT_BLUE = (200, 220, 255)
 
 COLORS = [RED, GREEN, BLUE, ORANGE, YELLOW, PURPLE, NAVY]
 BGCOLOR = BEIGE
@@ -38,6 +39,7 @@ BGCOLOR = BEIGE
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Bubble Shooter')
 
+#Começo do jogo
 
 game = True
 
@@ -54,7 +56,7 @@ while game:
     
 
 
-    window.fill(BEIGE)
+    window.fill(LIGHT_BLUE)
     objetos.draw(window)
     pygame.display.update()
  

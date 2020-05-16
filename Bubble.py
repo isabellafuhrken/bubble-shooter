@@ -8,7 +8,8 @@ class Bubble(pygame.sprite.Sprite):
         self.angle=0
         img=pygame.Surface((40,40))
         img.set_colorkey((0,0,0))
-        pygame.draw.circle(img,YELLOW,(20,20),20)
+        cor_bolinha = random.choice(COLORS)
+        pygame.draw.circle(img,cor_bolinha,(20,20),20)
         self.image=img
         self.rect=self.image.get_rect()
         self.rect.centerx=x
