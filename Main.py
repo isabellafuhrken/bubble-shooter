@@ -39,6 +39,7 @@ BGCOLOR = BEIGE
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Bubble Shooter')
 
+#Começo do jogo
 
 game = True
 
