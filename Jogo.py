@@ -1,4 +1,4 @@
-from Settings import *
+'''from Settings import *
 
 def Vetor():
     mousePos = pygame.mouse.get_pos()
@@ -13,4 +13,4 @@ def Vetor():
     if angle < 0:
         angle += 180
     #print(angle)
-    return vector, angle
+    return vector, angle'''

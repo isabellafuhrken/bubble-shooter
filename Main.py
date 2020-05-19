@@ -2,21 +2,21 @@ import pygame
 import random
 from Bubble import Bubble
 from arrow import Arrow
-from Jogo import  *
- 
+'''from Jogo import  *'''
+
 pygame.init()
 
 FPS=120
-WIDTH=800
-HEIGHT=600
+WIDTH=850
+HEIGHT=650
 TEXTHEIGHT=20
 BUBBLERADIUS=20
 BUBBLEWIDTH=BUBBLERADIUS*2
-BUBBLEHEIGHT=10
+BUBBLEHEIGHT=40
 STARTX=WIDTH/2
 STARTY=HEIGHT-30
-LINHAS=14
-COL=16
+LINHAS = 5
+COL= 25
 LINHASCOMEÇO=5
 
 
@@ -34,7 +34,7 @@ BEIGE = (229, 255, 204)
 LIGHT_BLUE = (200, 220, 255)
 
 COLORS = [RED, GREEN, BLUE, ORANGE, YELLOW, PURPLE, NAVY]
-BGCOLOR = BEIGE
+
  
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Bubble Shooter')
@@ -48,6 +48,16 @@ player=Bubble(STARTX,STARTY)
 flecha=Arrow()
 objetos.add(flecha)
 objetos.add(player)
+
+
+
+
+for i in range(LINHAS):
+    for j in range(COL):
+        bolha=Bubble(BUBBLEHEIGHT*j,BUBBLEWIDTH*i)
+        objetos.add(bolha)
+
+
 
 while game:
     #vector,angle =Vetor()
