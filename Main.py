@@ -16,7 +16,7 @@ BUBBLEHEIGHT=40
 STARTX=WIDTH/2
 STARTY=HEIGHT-30
 LINHAS = 5
-COL= 25
+COL= 21
 LINHASCOMEÇO=5
 
 
@@ -44,6 +44,7 @@ pygame.display.set_caption('Bubble Shooter')
 game = True
 
 objetos=pygame.sprite.Group()
+all_bolha=pygame.sprite.Group()
 player=Bubble(STARTX,STARTY)
 flecha=Arrow()
 objetos.add(flecha)
@@ -54,20 +55,24 @@ objetos.add(player)
 
 for i in range(LINHAS):
     for j in range(COL):
-        bolha=Bubble(BUBBLEHEIGHT*j,BUBBLEWIDTH*i)
+        bolha=Bubble(BUBBLEHEIGHT*j+BUBBLEHEIGHT//2,BUBBLEWIDTH*i+BUBBLEWIDTH//2)
         objetos.add(bolha)
+        
 
 
 
 while game:
-    #vector,angle =Vetor()
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT or event.type ==pygame.KEYUP:
             game = False
-        #if event.type== pygame.MOUSEMOTION:
-        #    flecha.update(angle,vector)
+        if event.type==pygame.MOUSEBUTTONDOWN:
+            player.tiro()
+    
     mouse=pygame.mouse.get_pos()
     flecha.mousex = mouse[0]
+    player.mousex=mouse[0]
+    player.mousey=mouse[1]
     flecha.mousey = mouse[1]
 
     objetos.update()
