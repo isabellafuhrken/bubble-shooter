@@ -1,4 +1,4 @@
-#teste
+
 import pygame
 import random
 from Bubble import Bubble
