@@ -3,8 +3,7 @@
 Projeto final - Design de software - 2020.1 - Turma C
 
 **MEMBROS**
-Isabella Corrêa Fuhrken
-Guilherme Caproni de Faria
+Isabella Corrêa Fuhrken e Guilherme Caproni de Faria
 
 **Linguagem utilizada**
 Python
