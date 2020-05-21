@@ -45,6 +45,7 @@ pygame.display.set_caption('Bubble Shooter')
 game = True
 
 objetos=pygame.sprite.Group()
+grid = pygame.sprite.Group()
 all_bolha=pygame.sprite.Group()
 player=Bubble(STARTX,STARTY)
 flecha=Arrow()
@@ -53,34 +54,47 @@ objetos.add(player)
 
 
 
-
 for i in range(LINHAS):
     for j in range(COL):
         bolha=Bubble(BUBBLEHEIGHT*j+BUBBLEHEIGHT//2,BUBBLEWIDTH*i+BUBBLEWIDTH//2)
         objetos.add(bolha)
+        grid.add(bolha)
         
 
-
-
 while game:
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT or event.type ==pygame.KEYUP:
             game = False
-        if event.type==pygame.MOUSEBUTTONDOWN:
+        if event.type==pygame.MOUSEBUTTONUP:
             player.tiro()
+        
     
     mouse=pygame.mouse.get_pos()
     flecha.mousex = mouse[0]
-    player.mousex=mouse[0]
+    player.mousex = mouse[0]
     player.mousey=mouse[1]
     flecha.mousey = mouse[1]
 
+   
+    hits = pygame.sprite.spritecollide(player, grid, False, pygame.sprite.collide_circle)
+
+    if len(hits) > 0:
+        player.speed = 0
+        for bolha in hits:
+            if player.cor == bolha.cor:
+                hits = pygame.sprite.spritecollide(player, grid, True, pygame.sprite.collide_circle)
+        grid.add(player) 
+        player = Bubble(STARTX, STARTY)
+        objetos.add(player)
+    
     objetos.update()
+    grid.update() 
 
     window.fill(LIGHT_BLUE)
     objetos.draw(window)
     pygame.display.update()
- 
- 
+     
+
+
+
 pygame.quit()
