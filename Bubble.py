@@ -23,9 +23,7 @@ class Bubble(pygame.sprite.Sprite):
 
 
 
-    def tiro(self):
-        self.speed=10
-        mouse=0
+    
         
 
     def update(self):
@@ -38,7 +36,7 @@ class Bubble(pygame.sprite.Sprite):
 
     def tiro(self):
         self.speed=10
-        mouse=0
+        
     
     
 
