@@ -18,20 +18,27 @@ class Bubble(pygame.sprite.Sprite):
         self.rect=self.image.get_rect()
         self.rect.centerx=x
         self.rect.centery=y
+        self.dx=0
+        self.dy=0
+
 
 
     def tiro(self):
-        self.speed=-5
+        self.speed=10
+        mouse=0
+        
 
     def update(self):
-        dx = self.mousex - self.rect.centerx 
-        dy = self.mousey - self.rect.centery
-        self.angle = math.degrees(math.atan2(dy, dx))
-        xmove=-math.cos(math.radians(self.angle))*self.speed
-        ymove=-math.sin(math.radians(self.angle))*self.speed
+        self.angle = math.degrees(math.atan2(self.dy, self.dx))
+        xmove=math.cos(math.radians(self.angle))*self.speed
+        ymove=math.sin(math.radians(self.angle))*self.speed
 
         self.rect.x+=xmove
         self.rect.y+=ymove
+
+    def tiro(self):
+        self.speed=10
+        mouse=0
     
     
 

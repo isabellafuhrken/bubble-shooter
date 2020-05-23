@@ -46,6 +46,7 @@ game = True
 
 objetos=pygame.sprite.Group()
 grid = pygame.sprite.Group()
+grid_del=[]
 all_bolha=pygame.sprite.Group()
 player=Bubble(STARTX,STARTY)
 flecha=Arrow()
@@ -63,32 +64,41 @@ for i in range(LINHAS):
 
 while game:
     for event in pygame.event.get():
+        mouse=pygame.mouse.get_pos()
+        flecha.mousex = mouse[0]
+        flecha.mousey = mouse[1]
         if event.type == pygame.QUIT or event.type ==pygame.KEYUP:
             game = False
-        if event.type==pygame.MOUSEBUTTONUP:
+        if event.type==pygame.MOUSEBUTTONDOWN:
             player.tiro()
-        
+            player.dx=mouse[0]-player.rect.centerx
+            player.dy=mouse[1]-player.rect.centery
     
-    mouse=pygame.mouse.get_pos()
-    flecha.mousex = mouse[0]
-    player.mousex = mouse[0]
-    player.mousey=mouse[1]
-    flecha.mousey = mouse[1]
+    
 
    
-    hits = pygame.sprite.spritecollide(player, grid, False, pygame.sprite.collide_circle)
+    hits = pygame.sprite.spritecollide(player, grid, False,pygame.sprite.collide_circle)
 
     if len(hits) > 0:
         player.speed = 0
         for bolha in hits:
             if player.cor == bolha.cor:
-                hits = pygame.sprite.spritecollide(player, grid, True, pygame.sprite.collide_circle)
+                hits = pygame.sprite.spritecollide(player, grid, True)
+                player.kill()
+                
+
+                
+                
+                
+                
+                
         grid.add(player) 
         player = Bubble(STARTX, STARTY)
         objetos.add(player)
     
     objetos.update()
     grid.update() 
+    
 
     window.fill(LIGHT_BLUE)
     objetos.draw(window)
