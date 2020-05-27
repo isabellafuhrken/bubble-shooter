@@ -46,14 +46,13 @@ game = True
 
 objetos=pygame.sprite.Group()
 grid = pygame.sprite.Group()
-grid_del=[]
-all_bolha=pygame.sprite.Group()
 player=Bubble(STARTX,STARTY)
 flecha=Arrow()
 objetos.add(flecha)
 objetos.add(player)
 
-
+score=0
+fonte_score=pygame.font.Font('assets/font/PressStart2P.ttf', 28)
 
 for i in range(LINHAS):
     for j in range(COL):
@@ -73,34 +72,39 @@ while game:
             player.tiro()
             player.dx=mouse[0]-player.rect.centerx
             player.dy=mouse[1]-player.rect.centery
+            
+            
     
     
 
    
     hits = pygame.sprite.spritecollide(player, grid, False,pygame.sprite.collide_circle)
-
     if len(hits) > 0:
         player.speed = 0
-        for bolha in hits:
-            if player.cor == bolha.cor:
-                hits = pygame.sprite.spritecollide(player, grid, True)
+        for bolha1 in hits:
+            if player.cor == bolha1.cor:
                 player.kill()
+                bolha1.kill()
+                grid.remove(bolha1)
+                score+=100
+            else:
+                grid.add(player)
                 
-
-                
-                
-                
-                
-                
-        grid.add(player) 
+    
         player = Bubble(STARTX, STARTY)
         objetos.add(player)
-    
+
     objetos.update()
     grid.update() 
-    
+
+    text_surface = fonte_score.render("{:08d}".format(score), True, (255, 255, 0))
+    text_rect = text_surface.get_rect()
+    text_rect.midtop = (60, 620)
+    window.blit(text_surface, text_rect)
+
 
     window.fill(LIGHT_BLUE)
+    window.blit(text_surface, text_rect)
     objetos.draw(window)
     pygame.display.update()
      
