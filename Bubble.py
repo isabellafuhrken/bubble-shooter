@@ -2,13 +2,15 @@ from Settings import *
 
 
 class Bubble(pygame.sprite.Sprite):
-    def __init__(self,x,y):
+    def __init__(self,x,y,linha,coluna):
         pygame.sprite.Sprite.__init__(self)
         self.radius=BUBBLERADIUS
         self.speed=0
         self.mousex=0
         self.mousey=0
         self.angle=0
+        self.linha = linha
+        self.coluna = coluna
         img=pygame.Surface((40,40))
         img.set_colorkey((0,0,0))
         cor_bolinha = random.choice(COLORS)
