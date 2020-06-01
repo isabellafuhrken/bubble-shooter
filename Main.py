@@ -90,11 +90,13 @@ while game:
         for bolha1 in hits:
             if player.cor == bolha1.cor:
                 vizinhos = [bolha1]
+                conta=1
                 while len(vizinhos) > 0:
                     vizinho = vizinhos.pop()
                     if vizinho.alive():
                         l = vizinho.linha
                         c = vizinho.coluna
+                        
                         if l > 0 and bolinhas[l-1][c] is not None and bolinhas[l-1][c].cor == player.cor:
                             vizinhos.append(bolinhas[l-1][c])
                         if l < LINHAS - 1 and bolinhas[l+1][c] is not None and bolinhas[l+1][c].cor == player.cor:
@@ -103,12 +105,13 @@ while game:
                             vizinhos.append(bolinhas[l][c-1])
                         if c < COL and bolinhas[l][c+1] is not None and bolinhas[l][c+1].cor == player.cor:
                             vizinhos.append(bolinhas[l][c+1])
+                        conta+=1
                         vizinho.kill()
                     
                 player.kill()
                 bolha1.kill()
                 grid.remove(bolha1)
-                score+=100
+                score+=conta*100
             else:
                 player.linha = bolha1.linha + 1
                 player.coluna = bolha1.coluna
@@ -118,7 +121,9 @@ while game:
                         linha.append(None)
                     bolinhas.append(linha)
                 bolinhas[player.linha][player.coluna] = player
-                # player.rect.centerx = ... (ficar certinho na grade)
+                player.rect.x = player.coluna * BUBBLEWIDTH
+                player.rect.y = player.linha * BUBBLEHEIGHT
+                
                 grid.add(player)
 
     

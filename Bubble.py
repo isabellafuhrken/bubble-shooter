@@ -27,12 +27,20 @@ class Bubble(pygame.sprite.Sprite):
         self.angle = math.degrees(math.atan2(self.dy, self.dx))
         xmove=math.cos(math.radians(self.angle))*self.speed
         ymove=math.sin(math.radians(self.angle))*self.speed
-        if self.rect.top>HEIGHT or self.rect.left>WIDTH or self.rect.right<0:
-            self.speedx
-
 
         self.rect.x+=xmove
         self.rect.y+=ymove
+
+        if self.rect.top < 0:
+            self.rect.top = 0
+            self.speed = 0
+
+        if self.rect.left<0 or self.rect.right>WIDTH:
+            self.dx = -self.dx
+            if self.rect.left<0:
+                self.rect.left = 0
+            else:
+                self.rect.right = WIDTH
 
     def tiro(self):
         self.speed=10
