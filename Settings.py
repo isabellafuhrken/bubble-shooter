@@ -4,21 +4,22 @@ import sys
 from os import path
 
 
+INIT = 0
+IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
+GAME = 1
+QUIT = 2
+
 FPS=120
 WIDTH=850
 HEIGHT=650
 TEXTHEIGHT=20
 BUBBLERADIUS=20
 BUBBLEWIDTH=BUBBLERADIUS*2
-BUBBLEHEIGHT=10
+BUBBLEHEIGHT=40
 STARTX=WIDTH/2
 STARTY=HEIGHT-30
-INIT = 0
-IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
-GAME = 1
-QUIT = 2
-LINHAS=14
-COL=16
+LINHAS = 5
+COL= 21
 LINHASCOMEÇO=5
 
 

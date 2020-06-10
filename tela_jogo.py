@@ -5,8 +5,7 @@ import random
 from Bubble import Bubble
 from arrow import Arrow
 
-def tela_jogo(window):  
-    clock = pygame.time.Clock()
+def tela_jogo(screen):  
     objetos=pygame.sprite.Group()
     grid = pygame.sprite.Group()
     player=Bubble(STARTX,STARTY,-1,-1)
@@ -95,8 +94,8 @@ def tela_jogo(window):
         text_surface = fonte_score.render("{:08d}".format(score), True, (0, 0, 0))
         text_rect = text_surface.get_rect()
         text_rect.midtop = (60, 620)
-        window.blit(text_surface, text_rect)
-        window.fill(LIGHT_BLUE)
-        objetos.draw(window)
+        screen.blit(text_surface, text_rect)
+        screen.fill(LIGHT_BLUE)
+        objetos.draw(screen)
         pygame.display.update()
 
