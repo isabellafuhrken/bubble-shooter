@@ -1,6 +1,7 @@
 import pygame , random , math , time 
 import pygame.gfxdraw
 import sys
+from os import path
 
 
 FPS=120
@@ -12,7 +13,10 @@ BUBBLEWIDTH=BUBBLERADIUS*2
 BUBBLEHEIGHT=10
 STARTX=WIDTH/2
 STARTY=HEIGHT-30
-
+INIT = 0
+IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
+GAME = 1
+QUIT = 2
 LINHAS=14
 COL=16
 LINHASCOMEÇO=5
