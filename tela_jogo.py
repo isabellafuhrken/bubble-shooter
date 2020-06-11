@@ -99,3 +99,5 @@ def tela_jogo(screen):
         objetos.draw(screen)
         pygame.display.update()
 
+    
+

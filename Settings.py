@@ -4,10 +4,12 @@ import sys
 from os import path
 
 
-INIT = 0
+
 IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
+INIT = 0
 GAME = 1
 QUIT = 2
+
 
 FPS=120
 WIDTH=850

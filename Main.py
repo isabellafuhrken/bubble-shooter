@@ -7,7 +7,7 @@ from Settings import *
 '''from Jogo import  *'''
 
 pygame.init()
-
+pygame.mixer.init()
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Bubble Shooter')

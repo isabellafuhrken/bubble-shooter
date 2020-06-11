@@ -26,9 +26,10 @@ def tela_inicial(window):
                 state = QUIT
                 running = False
 
-            if event.type == pygame.KEYUP:
-                state = GAME
-                running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if pygame.mouse.get_pos()[0] >= 370 and pygame.mouse.get_pos()[0] <= 470 and pygame.mouse.get_pos()[1] >= 328 and pygame.mouse.get_pos()[1] <= 480:
+                    state = GAME
+                    running = False
 
         # A cada loop, redesenha o fundo e os sprites
         window.fill(BLACK)
