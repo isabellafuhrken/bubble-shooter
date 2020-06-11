@@ -8,7 +8,10 @@ from Settings import *
 
 pygame.init()
 pygame.mixer.init()
+<<<<<<< HEAD
 
+=======
+>>>>>>> afdeef33fa04ec7c939712e2b650e67e20851d3c
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Bubble Shooter')
