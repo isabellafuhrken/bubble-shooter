@@ -4,9 +4,10 @@ import random
 from tela_inicial import tela_inicial
 from tela_jogo import tela_jogo
 from Settings import *
-'''from Jogo import  *'''
+
 
 pygame.init()
+pygame.mixer.init()
 
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -17,6 +18,7 @@ while state != QUIT:
     if state == INIT:
         state = tela_inicial(window)
     elif state == GAME:
+        pygame.mixer.music.fadeout(3000)
         state = tela_jogo(window)
     else:
         state = QUIT

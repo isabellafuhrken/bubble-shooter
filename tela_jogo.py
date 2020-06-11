@@ -1,11 +1,11 @@
 import pygame
-from Settings import FPS, WIDTH, HEIGHT, BLACK, YELLOW, RED, STARTX, STARTY,LINHAS,COL, BUBBLEHEIGHT, BUBBLERADIUS,BUBBLEWIDTH, LIGHT_BLUE
+from Settings import *
 from os import path
 import random
 from Bubble import Bubble
 from arrow import Arrow
 
-def tela_jogo(screen):  
+def tela_jogo(screen): 
     objetos=pygame.sprite.Group()
     grid = pygame.sprite.Group()
     player=Bubble(STARTX,STARTY,-1,-1)
@@ -70,6 +70,9 @@ def tela_jogo(screen):
                     bolha1.kill()
                     grid.remove(bolha1)
                     score+=conta*100
+                    if score>10000:
+                        state=QUIT
+                        
                 else:
                     player.linha = bolha1.linha + 1
                     player.coluna = bolha1.coluna

@@ -38,3 +38,14 @@ LIGHT_BLUE = (200, 220, 255)
 
 COLORS = [RED, GREEN, BLUE, ORANGE, YELLOW, PURPLE, NAVY]
 BGCOLOR = BEIGE
+
+def load_assets():
+    assets={}
+    
+    pygame.mixer.music.load('assets/StartSong.wav')
+    pygame.mixer.music.set_volume(0.4)
+    #Colocar uma segunda musica na hora que clica no start
+
+    
+    return assets
+    

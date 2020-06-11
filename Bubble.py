@@ -41,6 +41,7 @@ class Bubble(pygame.sprite.Sprite):
                 self.rect.left = 0
             else:
                 self.rect.right = WIDTH
+        
 
     def tiro(self):
         self.speed=10
