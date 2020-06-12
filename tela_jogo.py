@@ -65,14 +65,35 @@ def tela_jogo(screen):
                                 vizinhos.append(bolinhas[l][c+1])
                             conta+=1
                             vizinho.kill()
-                        
+                            bolinhas[l][c] = None
+
+                    for bolinha in grid:
+                        l = bolinha.linha
+                        c = bolinha.coluna
+                        if l > 0:
+                            cima = bolinhas[l - 1][c]
+                            if l+1 < len(bolinhas):
+                                baixo = bolinhas[l+1][c]
+                            else:
+                                baixo = None
+                            if c > 0:
+                                esquerda = bolinhas[l][c-1]
+                            else:
+                                esquerda = None
+                            if c+1 < len(bolinhas[l]):
+                                direita = bolinhas[l][c+1]
+                            else:
+                                direita = None
+                            if cima is None and baixo is None and esquerda is None and direita is None:
+                                bolinha.kill()
+                                grid.remove(bolinha)
+                                bolinhas[l][c] = None
+
                     player.kill()
                     bolha1.kill()
                     grid.remove(bolha1)
                     score+=conta*100
-                    if score>10000:
-                        state=QUIT
-                        
+                     
                 else:
                     player.linha = bolha1.linha + 1
                     player.coluna = bolha1.coluna
@@ -93,13 +114,15 @@ def tela_jogo(screen):
 
         objetos.update()
         grid.update() 
-
+        
         text_surface = fonte_score.render("{:08d}".format(score), True, (0, 0, 0))
         text_rect = text_surface.get_rect()
-        text_rect.midtop = (60, 620)
-        screen.blit(text_surface, text_rect)
+        text_rect.midtop = (60, 600)
+        
         screen.fill(LIGHT_BLUE)
         objetos.draw(screen)
+        screen.blit(text_surface, text_rect)
+        
         pygame.display.update()
 
     

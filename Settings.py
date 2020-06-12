@@ -4,12 +4,10 @@ import sys
 from os import path
 
 
-
-IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
 INIT = 0
+IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
 GAME = 1
 QUIT = 2
-
 
 FPS=120
 WIDTH=850
@@ -43,9 +41,10 @@ BGCOLOR = BEIGE
 
 def load_assets():
     assets={}
-    
     pygame.mixer.music.load('assets/StartSong.wav')
-    pygame.mixer.music.set_volume(0.4)
+    pygame.mixer.music.set_volume(0.0)
+    
+    
     #Colocar uma segunda musica na hora que clica no start
 
     

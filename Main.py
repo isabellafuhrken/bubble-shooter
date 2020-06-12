@@ -8,10 +8,7 @@ from Settings import *
 
 pygame.init()
 pygame.mixer.init()
-<<<<<<< HEAD
 
-=======
->>>>>>> afdeef33fa04ec7c939712e2b650e67e20851d3c
 
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Bubble Shooter')
@@ -22,6 +19,7 @@ while state != QUIT:
         state = tela_inicial(window)
     elif state == GAME:
         pygame.mixer.music.fadeout(3000)
+        
         state = tela_jogo(window)
     else:
         state = QUIT
