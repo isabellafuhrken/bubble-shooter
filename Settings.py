@@ -6,8 +6,10 @@ from os import path
 
 INIT = 0
 IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
+SND_DIR = path.join(path.dirname(__file__), 'assets', 'sound')
 GAME = 1
 QUIT = 2
+OVER = 3
 
 FPS=120
 WIDTH=850
@@ -35,18 +37,21 @@ WHITE   = (255, 255, 255)
 BLACK   = (0, 0, 0)
 BEIGE = (229, 255, 204)
 LIGHT_BLUE = (200, 220, 255)
+LIGHT_RED = (255, 171, 171)
 
 COLORS = [RED, GREEN, BLUE, ORANGE, YELLOW, PURPLE, NAVY]
 BGCOLOR = BEIGE
 
+BOLHA_SND = 'bolha_snd'
+
 def load_assets():
     assets={}
-    pygame.mixer.music.load('assets/StartSong.wav')
-    pygame.mixer.music.set_volume(0.0)
-    
+    assets[BOLHA_SND] = pygame.mixer.Sound(path.join(SND_DIR, 'bolha.ogg'))
+    pygame.mixer.music.load(path.join(SND_DIR, 'StartSong.wav'))
+    pygame.mixer.music.set_volume(6.0)
     
     #Colocar uma segunda musica na hora que clica no start
 
     
     return assets
-    
+

@@ -5,6 +5,7 @@ import random
 from Bubble import Bubble
 from arrow import Arrow
 
+
 def tela_jogo(screen): 
     objetos=pygame.sprite.Group()
     grid = pygame.sprite.Group()
@@ -12,11 +13,11 @@ def tela_jogo(screen):
     flecha=Arrow()
     objetos.add(flecha)
     objetos.add(player)
-
     score=0
     fonte_score=pygame.font.Font('assets/font/PressStart2P.ttf', 28)
 
     bolinhas = []
+    assets = load_assets()
 
     for i in range(LINHAS):
         linha = []
@@ -44,9 +45,11 @@ def tela_jogo(screen):
             
         hits = pygame.sprite.spritecollide(player, grid, False,pygame.sprite.collide_circle)
         if len(hits) > 0:
+
             player.speed = 0
             for bolha1 in hits:
                 if player.cor == bolha1.cor:
+                    assets[BOLHA_SND].play()
                     vizinhos = [bolha1]
                     conta=1
                     while len(vizinhos) > 0:
@@ -66,6 +69,7 @@ def tela_jogo(screen):
                             conta+=1
                             vizinho.kill()
                             bolinhas[l][c] = None
+                            
 
                     for bolinha in grid:
                         l = bolinha.linha
@@ -108,7 +112,10 @@ def tela_jogo(screen):
                     
                     grid.add(player)
 
-        
+            if player.rect.y > 400:
+                state = OVER
+                game = False
+                return state
             player = Bubble(STARTX, STARTY, -1, -1)
             objetos.add(player)
 
@@ -118,11 +125,22 @@ def tela_jogo(screen):
         text_surface = fonte_score.render("{:08d}".format(score), True, (0, 0, 0))
         text_rect = text_surface.get_rect()
         text_rect.midtop = (60, 600)
-        
         screen.fill(LIGHT_BLUE)
+        
+        #Finalizar a tela quando a pessoa ganha
+        '''if score > 5000:
+            ganhou = fonte_score.render("{:08d} Você ganhou! Seu score foi ".format(score), True, (0, 0, 0))
+            ganhou_rect =ganhou.get_rect()
+            ganhou_rect.midtop=(300, 300)
+            screen.blit(ganhou, ganhou_rect)
+            state = QUIT'''
+            
+        screen.fill(LIGHT_BLUE)
+        pygame.draw.line(screen, RED, [0, 440], [850, 440], 3)
+        pygame.draw.rect(screen, LIGHT_RED, [0, 440, 850, 250])
         objetos.draw(screen)
         screen.blit(text_surface, text_rect)
-        
+    
         pygame.display.update()
 
     
