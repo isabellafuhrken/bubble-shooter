@@ -18,10 +18,9 @@ while state != QUIT:
     if state == INIT:
         state = tela_inicial(window)
     elif state == GAME:
-        pygame.mixer.music.fadeout(3000)
-        pygame.time.delay(2999)
+        
         pygame.mixer.music.load('assets/sound/SecondSong.wav')
-        pygame.mixer.music.set_volume(1.0)
+        pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(loops=-1)
         state = tela_jogo(window)   
         

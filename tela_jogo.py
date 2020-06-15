@@ -136,15 +136,15 @@ def tela_jogo(screen):
         
         #Finalizar a tela quando a pessoa ganha
         
-        ganhou = fontev.render("Voce ganhou! Seu score foi {:08d} ".format(score), True, (0, 0, 0))
+        ganhou = fontev.render("Você ganhou! Seu score foi {:08d} ".format(score), True, (0, 0, 0))
         ganhou_rect =ganhou.get_rect()
         ganhou_rect.midtop=(425, 300)
         
         if score>=5000:
-            screen.fill(random.choice(COLORS))
+            screen.fill(random.choice(LIGHT))
             screen.blit(ganhou, ganhou_rect)
             pygame.display.update()
-            pygame.time.delay(2500)
+            pygame.time.delay(5000)
             state=INIT
             game=False
             return state
