@@ -1,6 +1,6 @@
 from Settings import *
 import math
-
+#Classe da seta de lançamento 
 class Arrow(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -16,8 +16,6 @@ class Arrow(pygame.sprite.Sprite):
         self.mousex = 0
         self.mousey = 0
 
-    #def draw(Self):
-    #    window.blit(self.Image,self.rect)
 
     def update(self):
         dx = self.mousex - self.rect.centerx

@@ -6,7 +6,7 @@ from tela_jogo import tela_jogo
 from game_over import game_over
 from Settings import *
 
-
+# Roda as tres telas 
 pygame.init()
 pygame.mixer.init()
 
@@ -18,9 +18,13 @@ while state != QUIT:
     if state == INIT:
         state = tela_inicial(window)
     elif state == GAME:
-        '''pygame.mixer.music.fadeout(3000)''' #tava carregando muito no começo do jogo, n sei se eh uma boa
+        pygame.mixer.music.fadeout(3000)
+        pygame.time.delay(2999)
+        pygame.mixer.music.load('assets/sound/SecondSong.wav')
+        pygame.mixer.music.set_volume(1.0)
+        pygame.mixer.music.play(loops=-1)
+        state = tela_jogo(window)   
         
-        state = tela_jogo(window)
     elif state == OVER:
         state = game_over(window)
     else:

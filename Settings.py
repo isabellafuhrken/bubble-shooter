@@ -46,12 +46,8 @@ BOLHA_SND = 'bolha_snd'
 
 def load_assets():
     assets={}
-    assets[BOLHA_SND] = pygame.mixer.Sound(path.join(SND_DIR, 'bolha.ogg'))
     pygame.mixer.music.load(path.join(SND_DIR, 'StartSong.wav'))
-    pygame.mixer.music.set_volume(6.0)
-    
-    #Colocar uma segunda musica na hora que clica no start
+    pygame.mixer.music.set_volume(0.7)
 
-    
     return assets
 

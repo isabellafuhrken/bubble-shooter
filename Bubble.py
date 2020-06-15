@@ -1,6 +1,6 @@
 from Settings import *
 
-
+#Classe da bolha
 class Bubble(pygame.sprite.Sprite):
     def __init__(self,x,y,linha,coluna):
         pygame.sprite.Sprite.__init__(self)
