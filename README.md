@@ -11,11 +11,11 @@ Python
 **Descrição do projeto**
 Desenvolvimento do um jogo de computador Bubble Shooter em Python 3 utilizando recursos da biblioteca PyGame
 
-**Instalação do PyGame**
-Windows e Linux  
+**Instalação do PyGame**  
+**Windows e Linux**  
 Abra o seu terminal (Linux) ou Anaconda Prompt (Windows) e digite:  
 pip install pygame  
-Mac OSX  
+**Mac OSX**  
 Se você não tiver o Homebrew instalado, instale-o  
 seguindo as instruções disponíveis neste link : https://brew.sh/  
 Abra o terminal e digite:  
