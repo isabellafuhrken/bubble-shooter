@@ -23,7 +23,6 @@ class Arrow(pygame.sprite.Sprite):
         dx = self.mousex - self.rect.centerx
         dy = self.mousey - self.rect.centery
         self.angle = math.degrees(math.atan2(dy, dx)) + 90
-        #Falta fazer o if da seta
         self.image=pygame.transform.rotate(self.orig_img, -self.angle)
         self.rect = self.image.get_rect()
         self.rect.centerx=STARTX
