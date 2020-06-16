@@ -8,7 +8,7 @@ Isabella Corrêa Fuhrken e Guilherme Caproni de Faria
 **Linguagem utilizada**  
 Python
 
-**Link do vídeo da apresentação do jogo**
+**Link do vídeo da apresentação do jogo:**  
 https://www.youtube.com/watch?v=wR5XtVTv5xc
 
 **Descrição do projeto**  
