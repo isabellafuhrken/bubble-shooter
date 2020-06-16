@@ -129,7 +129,7 @@ def tela_jogo(screen):
 
         screen.fill(LIGHT_BLUE)
         #Gerando fonte 
-        text_surface = fonte_score.render("Objetivo:10000", True, (0, 0, 0))
+        text_surface = fonte_score.render("Objetivo:20000", True, (0, 0, 0))
         text_surface2 = fonte_score.render("Score:{}".format(score), True, (0, 0, 0))
         text_rect = text_surface.get_rect()
         text_rect2 = text_surface2.get_rect()
@@ -143,7 +143,7 @@ def tela_jogo(screen):
         ganhou_rect =ganhou.get_rect()
         ganhou_rect.midtop=(425, 300)
         
-        if score>=10000:
+        if score>=20000:
             screen.fill(random.choice(LIGHT))
             screen.blit(ganhou, ganhou_rect)
             pygame.display.update()
