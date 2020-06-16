@@ -46,7 +46,7 @@ class Bubble(pygame.sprite.Sprite):
         
     '''Define a velocidade da bolha'''
     def tiro(self):
-        self.speed=15
+        self.speed=10
         
     
     
