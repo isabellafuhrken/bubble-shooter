@@ -8,12 +8,12 @@ Isabella Corrêa Fuhrken e Guilherme Caproni de Faria
 **Linguagem utilizada**  
 Python
 
-**Link do vídeo de apresentação do jogo**
+**Link do vídeo da apresentação do jogo**
 https://www.youtube.com/watch?v=wR5XtVTv5xc
 
 **Descrição do projeto**  
 Desenvolvimento do um jogo de computador Bubble Shooter em Python 3 utilizando recursos da biblioteca PyGame.  
-O jogo consiste em mirar e atirar a bolha principal no grid de bolhas. As bolhas que tiverem as mesmas cores irão explodir. Cada bolha que for retirada acarreta em um aumento de 500 pontos. O objetivo do jogo é atingir 20000 pontos. Caso a bolha atirada ultrapasse a linha limite, o jogo se encerra.
+O jogo consiste em mirar e atirar a bolha principal no grid de bolhas. As bolhas que tiverem as mesmas cores irão explodir. Cada uma que for retirada acarreta em um aumento de 500 pontos. O objetivo do jogo é atingir 20000 pontos. Caso a bolha atirada ultrapasse a linha limite, o jogo se encerra.
 
 **Instalação do PyGame**  
 **Windows e Linux**  
