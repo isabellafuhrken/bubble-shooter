@@ -1,6 +1,7 @@
+'''Importa o Settings'''
 from Settings import *
 
-#Classe da bolha
+'''Classe da bolha'''
 class Bubble(pygame.sprite.Sprite):
     def __init__(self,x,y,linha,coluna):
         pygame.sprite.Sprite.__init__(self)
@@ -15,6 +16,7 @@ class Bubble(pygame.sprite.Sprite):
         img.set_colorkey((0,0,0))
         cor_bolinha = random.choice(COLORS)
         self.cor = cor_bolinha
+        #Desenha a bolha
         pygame.draw.circle(img,cor_bolinha,(20,20),20)
         self.image=img
         self.rect=self.image.get_rect()
@@ -22,7 +24,7 @@ class Bubble(pygame.sprite.Sprite):
         self.rect.centery=y
         self.dx=0
         self.dy=0
-
+    '''Atualiza a bolha'''
     def update(self):
         self.angle = math.degrees(math.atan2(self.dy, self.dx))
         xmove=math.cos(math.radians(self.angle))*self.speed
@@ -42,7 +44,7 @@ class Bubble(pygame.sprite.Sprite):
             else:
                 self.rect.right = WIDTH
         
-
+    '''Define a velocidade da bolha'''
     def tiro(self):
         self.speed=15
         

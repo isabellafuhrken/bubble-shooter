@@ -1,10 +1,10 @@
-
+#Importa bibliotecas e os arquivos
 import pygame
 import random
 from os import path
 from Settings import *
 
-
+#Função que define o game over
 def game_over(window):
 
     clock = pygame.time.Clock()

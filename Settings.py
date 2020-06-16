@@ -1,9 +1,10 @@
+#Importa bibliotecas
 import pygame , random , math , time 
 import pygame.gfxdraw
 import sys
 from os import path
 
-
+#Define os parâmetros e variáveis
 INIT = 0
 IMG_DIR = path.join(path.dirname(__file__), 'assets', 'img')
 SND_DIR = path.join(path.dirname(__file__), 'assets', 'sound')
@@ -25,7 +26,7 @@ COL= 21
 LINHASCOMEÇO=5
 
 
-
+#Define as cores que serão utilizadas no jogo
 RED     = (255, 0, 0)
 GREEN   = (0, 255, 0)
 BLUE    = (0, 0, 255)
@@ -47,6 +48,7 @@ BGCOLOR = BEIGE
 
 BOLHA_SND = 'bolha_snd'
 
+#Função que carrega a música utilizada na tela de início
 def load_assets():
     assets={}
     pygame.mixer.music.load(path.join(SND_DIR, 'StartSong.wav'))

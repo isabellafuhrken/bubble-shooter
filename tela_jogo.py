@@ -1,3 +1,4 @@
+#Importa bibliotecas e arquivos
 import pygame
 from Settings import *
 from os import path
@@ -17,6 +18,7 @@ def tela_jogo(screen):
     flecha=Arrow()
     objetos.add(flecha)
     objetos.add(player)
+    #Cria o Score
     score=0
     fonte_score=pygame.font.Font('assets/font/PressStart2P.ttf', 20)
     bolha_b = pygame.mixer.Sound(path.join(SND_DIR, 'bolha.ogg'))
@@ -33,7 +35,7 @@ def tela_jogo(screen):
             linha.append(bolha)
         bolinhas.append(linha)
 
-
+    #Iníico do jogo
     game = True
     while game:
         for event in pygame.event.get():
@@ -75,7 +77,7 @@ def tela_jogo(screen):
                             vizinho.kill()
                             bolinhas[l][c] = None
                             
-                    #Destroi bolinha sobrando 
+                    #Destrói bolinha sobrando 
                     for bolinha in grid:
                         l = bolinha.linha
                         c = bolinha.coluna
@@ -138,7 +140,6 @@ def tela_jogo(screen):
         screen.fill(LIGHT_BLUE)
         
         #Finalizar a tela quando a pessoa ganha
-        
         ganhou = fontev.render("Parabens, voce ganhou", True, (0, 0, 0))
         ganhou_rect =ganhou.get_rect()
         ganhou_rect.midtop=(425, 300)
@@ -152,13 +153,13 @@ def tela_jogo(screen):
             game=False
             return state
             
-          
+        #Define a linha limite
         pygame.draw.line(screen, RED, [0, 440], [850, 440], 3)
         pygame.draw.rect(screen, LIGHT_RED, [0, 440, 850, 250])
         objetos.draw(screen)
         screen.blit(text_surface, text_rect)
         screen.blit(text_surface2, text_rect2)
-        
+        #Atualiza o display
         pygame.display.update()
 
     

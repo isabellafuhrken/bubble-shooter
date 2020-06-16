@@ -1,3 +1,4 @@
+'''Importa bibliotecas e os arquivos'''
 from os import path
 import pygame
 import random
@@ -6,7 +7,7 @@ from tela_jogo import tela_jogo
 from game_over import game_over
 from Settings import *
 
-# Roda as tres telas 
+'''Inicializa o pygame'''
 pygame.init()
 pygame.mixer.init()
 

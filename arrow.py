@@ -1,10 +1,12 @@
+'''Importa a biblioteca math e o arquivo Settings'''
 from Settings import *
 import math
-#Classe da seta de lançamento 
+'''Classe da seta de lançamento '''
 class Arrow(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
         self.angle=90
+        '''Carrega foto da seta'''
         arrowImage = pygame.image.load('assets/arrow.png')
         arrowImage.convert_alpha()
         arrowRect= arrowImage.get_rect()
@@ -16,7 +18,7 @@ class Arrow(pygame.sprite.Sprite):
         self.mousex = 0
         self.mousey = 0
 
-
+    '''Atualização da seta'''
     def update(self):
         dx = self.mousex - self.rect.centerx
         dy = self.mousey - self.rect.centery

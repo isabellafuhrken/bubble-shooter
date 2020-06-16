@@ -1,4 +1,4 @@
-
+#Importa bibliotecas e o Settings
 import pygame
 import random
 from os import path
@@ -7,8 +7,9 @@ from Settings import *
 pygame.mixer.init()
 
 
-
+#Função que define a tela inicial
 def tela_inicial(window):
+    #Música da tela inicial
     assets=load_assets()
     pygame.mixer.music.play(loops=-1)
     # Variável para o ajuste de velocidade
