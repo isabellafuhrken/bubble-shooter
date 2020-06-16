@@ -44,7 +44,7 @@ class Bubble(pygame.sprite.Sprite):
         
 
     def tiro(self):
-        self.speed=10
+        self.speed=15
         
     
     

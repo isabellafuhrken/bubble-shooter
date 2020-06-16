@@ -20,7 +20,7 @@ def tela_jogo(screen):
     score=0
     fonte_score=pygame.font.Font('assets/font/PressStart2P.ttf', 20)
     bolha_b = pygame.mixer.Sound(path.join(SND_DIR, 'bolha.ogg'))
-    fontev =pygame.font.Font('assets/font/FonteV.ttf',28)
+    fontev =pygame.font.Font('assets/font/FonteV.ttf',40)
 
     bolinhas = []
     #Cria grid das bolinhas
@@ -129,18 +129,21 @@ def tela_jogo(screen):
 
         screen.fill(LIGHT_BLUE)
         #Gerando fonte 
-        text_surface = fonte_score.render("{:08d}".format(score), True, (0, 0, 0))
+        text_surface = fonte_score.render("Objetivo:10000", True, (0, 0, 0))
+        text_surface2 = fonte_score.render("Score:{}".format(score), True, (0, 0, 0))
         text_rect = text_surface.get_rect()
-        text_rect.midtop = (60, 600)
+        text_rect2 = text_surface2.get_rect()
+        text_rect.midleft = (20, 600)
+        text_rect2.midleft = (20, 620)
         screen.fill(LIGHT_BLUE)
         
         #Finalizar a tela quando a pessoa ganha
         
-        ganhou = fontev.render("Você ganhou! Seu score foi {:08d} ".format(score), True, (0, 0, 0))
+        ganhou = fontev.render("Parabens, voce ganhou", True, (0, 0, 0))
         ganhou_rect =ganhou.get_rect()
         ganhou_rect.midtop=(425, 300)
         
-        if score>=5000:
+        if score>=10000:
             screen.fill(random.choice(LIGHT))
             screen.blit(ganhou, ganhou_rect)
             pygame.display.update()
@@ -154,7 +157,7 @@ def tela_jogo(screen):
         pygame.draw.rect(screen, LIGHT_RED, [0, 440, 850, 250])
         objetos.draw(screen)
         screen.blit(text_surface, text_rect)
-        
+        screen.blit(text_surface2, text_rect2)
         
         pygame.display.update()
 

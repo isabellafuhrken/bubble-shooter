@@ -20,7 +20,7 @@ while state != QUIT:
     elif state == GAME:
         
         pygame.mixer.music.load('assets/sound/SecondSong.wav')
-        pygame.mixer.music.set_volume(0.3)
+        pygame.mixer.music.set_volume(0.1)
         pygame.mixer.music.play(loops=-1)
         state = tela_jogo(window)   
         
