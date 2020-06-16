@@ -34,5 +34,5 @@ rm -rf pygame
 Para mais detalhes e outras opções de instalação no Mac, consulte a documentação:   
 https://www.pygame.org/wiki/MacCompile
 
-**Como executar o programa**
+**Como executar o programa**. 
 Execute o arquivo Main.py
